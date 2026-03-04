@@ -1,6 +1,6 @@
 # AuthorityLayer
 
-![CI](https://github.com/032383justin/authority-layer/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/032383justin/authority-layer/actions/workflows/ci.yml/badge.svg)](https://github.com/032383justin/authority-layer/actions/workflows/ci.yml)
 
 Hard execution and budget limits for autonomous agents — enforced locally.
 
