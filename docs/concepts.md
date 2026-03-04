@@ -1,10 +1,32 @@
 # Concepts
 
+← [Back to README](../README.md)
+
+---
+
+## The Problem
+
+Autonomous agents introduce a risk surface that traditional applications don't have:
+
+- **Unbounded token spend** — a looping agent can burn thousands of dollars before you notice
+- **Infinite tool loops** — agents can get stuck calling the same tool repeatedly
+- **Retry storms** — failed API calls retried indefinitely with no ceiling
+- **Cascading API calls** — one agent spawns sub-calls, which spawn more
+- **Silent cost explosions** — spend accumulates across runs with no enforced ceiling
+
+Most systems rely on warnings, dashboard alerts, or provider-level quotas — all of which react *after* the damage is done.
+
+AuthorityLayer enforces hard limits directly in your execution loop. When a boundary is crossed, execution stops immediately.
+
+---
+
 ## How AuthorityLayer Works
 
 AuthorityLayer is a local enforcement SDK. It sits inside your agent's execution loop and monitors for limit breaches in real time. There is no cloud component, no telemetry, and no external dependency.
 
 Everything runs in-process.
+
+You wrap your agent run in `authority.wrap()` and route all external tool calls through `authority.tool()`. That's the entire integration surface. AuthorityLayer checks limits on each call and halts execution before any tool function runs if a limit has already been breached.
 
 ---
 
@@ -39,19 +61,6 @@ AuthorityLayer never crashes the host process with an unexpected error. All enfo
 ```
 
 Access this via `err.enforcement` on the caught `EnforcementHalt`. Do not parse the error message string — it is for human readability only and is not stable API.
-
----
-
-## Hash-Linked Event Chain
-
-Every enforcement event — run starts, tool calls, halts, errors — is appended to an in-memory hash-linked chain. Each event contains:
-
-- A unique `event_id`
-- A SHA-256 hash of its own content concatenated with the previous event's hash
-
-The chain is tamper-evident: altering any event, reordering events, or removing events will invalidate all subsequent hashes. Verify locally with `authority.verifyChain()`.
-
-In V1, the chain lives in memory only. It is not persisted to disk or anchored remotely. Access it with `authority.getChain()`.
 
 ---
 
