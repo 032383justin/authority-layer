@@ -1,0 +1,31 @@
+{
+  "name": "authority-layer",
+  "version": "0.1.0",
+  "description": "Hard execution and budget limits for autonomous agents — enforced locally.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "ai",
+    "agents",
+    "enforcement",
+    "budget",
+    "rate-limit",
+    "safety"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
+}
