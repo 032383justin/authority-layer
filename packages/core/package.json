@@ -1,5 +1,5 @@
 {
-  "name": "@authority-layer/core",
+  "name": "authority-layer",
   "version": "0.1.0",
   "description": "Hard execution and budget limits for autonomous agents — enforced locally.",
   "main": "dist/index.js",
@@ -7,11 +7,17 @@
   "files": [
     "dist"
   ],
+  "bin": {
+    "authority-layer": "dist/doctor.js"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "dev": "tsc -p tsconfig.json --watch",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "validate": "tsc -p tsconfig.json && node dist/index.js"
+    "validate": "tsc -p tsconfig.json && node dist/index.js",
+    "example": "node ../../examples/run.js",
+    "doctor": "node dist/doctor.js",
+    "prepublishOnly": "npm run build && npm run typecheck"
   },
   "keywords": [
     "ai",
@@ -19,8 +25,18 @@
     "enforcement",
     "budget",
     "rate-limit",
-    "safety"
+    "safety",
+    "autonomous-agents",
+    "llm"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/032383justin/authority-layer"
+  },
+  "homepage": "https://github.com/032383justin/authority-layer#readme",
+  "bugs": {
+    "url": "https://github.com/032383justin/authority-layer/issues"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"
