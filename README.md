@@ -12,6 +12,33 @@ Fail-closed by default.
 
 ---
 
+## Quick Start
+
+```bash
+git clone https://github.com/032383justin/authority-layer.git
+cd authority-layer
+npm install
+npm run example
+```
+
+See a real enforcement halt in under 30 seconds:
+
+```
+⛔  Execution halted
+
+{
+  "status": "halted",
+  "reason": "budget_exceeded",
+  "limit": 0.05,
+  "spent": 0.07,
+  "event_id": "evt_53ab5487b37cd9c0"
+}
+
+Chain integrity : ✅  verified
+```
+
+---
+
 ## Why AuthorityLayer Exists
 
 Autonomous agents introduce a new risk surface:
