@@ -16,7 +16,7 @@ Hard execution and budget limits for autonomous agents — enforced locally.
 
 ## Live Enforcement Demo
 
-![AuthorityLayer enforcement demo](https://raw.githubusercontent.com/032383justin/authority-layer/main/demo.svg)
+![AuthorityLayer enforcement demo](https://raw.githubusercontent.com/032383justin/authority-layer/main/docs/assets/enforcement-demo.svg)
 
 ---
 
