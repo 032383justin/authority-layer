@@ -18,7 +18,7 @@
     "example": "node ../../examples/run.js",
     "doctor": "node dist/cli.js doctor",
     "simulate": "node dist/cli.js simulate",
-    "prepublishOnly": "npm run build && npm run typecheck"
+    "prepublishOnly": "node -e \"require('fs').copyFileSync('../../README.md','README.md')\" && npm run build && npm run typecheck"
   },
   "keywords": [
     "ai-agents",
