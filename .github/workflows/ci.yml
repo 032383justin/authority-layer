@@ -22,7 +22,7 @@ jobs:
       - name: Install deps
         run: npm install
 
-      - name: Run workspace tests
+      - name: Run workspace and runtime tests
         run: npm test
 
       - name: Build core
