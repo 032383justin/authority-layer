@@ -7,17 +7,21 @@
     ],
     "scripts": {
         "example": "npm run -w authority-layer build && node examples/run.js",
-        "test": "node tests/workspace-smoke.test.js"
+        "test": "node tests/workspace-smoke.test.js && node tests/runtime-smoke.test.js",
+        "test:runtime": "node tests/runtime-smoke.test.js"
     },
     "keywords": [
+        "ai-tools",
         "ai-guardrails",
         "ai-agents",
         "agent-runtime",
         "ai-safety",
         "llm-security",
-        "autonomous-agents"
+        "autonomous-agents",
+        "runtime-guardrails",
+        "token-cost-control"
     ],
-    "homepage": "https://github.com/repoforge-dev/authority-layer",
+    "homepage": "https://repoforge.dev/repos/repoforge-dev/authority-layer",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/repoforge-dev/authority-layer.git"
